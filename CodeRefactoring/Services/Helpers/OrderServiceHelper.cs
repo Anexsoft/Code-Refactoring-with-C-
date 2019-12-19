@@ -78,8 +78,8 @@ namespace CodeRefactoring.Services
                 var originalTotal = item.Total;
 
                 item.Total = Math.Round(item.Quantity * item.UnitPrice, 2);
-                item.Iva = Math.Round(item.Total / (1 + ivaRate), 2);
-                item.SubTotal = Math.Round(item.Total - item.Iva, 2);
+                item.SubTotal = Math.Round(item.Total / (1 + ivaRate), 2);
+                item.Iva = Math.Round(item.Total - item.SubTotal, 2);
                 item.Discount = originalTotal - item.Total;
             }
         }
